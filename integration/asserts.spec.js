@@ -45,4 +45,27 @@ it('Arrays', () => {
 
     expect(arr).to.have.members([1, 2, 3, 4])
     expect(arr).to.include.members([1, 4])
+    expect(arr).to.not.be.empty
+    expect([]).to.be.empty
+})
+
+it('Types', () => {
+    const num = 1
+    const str = 'hello'
+
+    expect(num).to.be.a('number')
+    expect(str).to.be.a('string')
+    expect({}).to.be.an('object')
+    expect([]).to.be.an('array')
+})
+
+it('Strings', () => {
+    const str = 'hello world string'
+
+    expect(str).to.be.equal('hello world string')
+    expect(str).to.have.length(18)
+    expect(str).to.contains('world')
+    expect(str).to.match(/hello/) // Use regex on the tests is possible too
+    expect(str).to.match(/^hello/)
+    expect(str).to.match(/string$/)
 })
