@@ -68,4 +68,17 @@ it('Strings', () => {
     expect(str).to.match(/hello/) // Use regex on the tests is possible too
     expect(str).to.match(/^hello/)
     expect(str).to.match(/string$/)
+    expect(str).to.match(/\w+/) // Verifying that contains just string matches
+    expect(str).to.match(/\D+/) // Verifying that not contains numbers matches
+})
+
+it('Numbers', () => {
+    const number = 4
+    const floatNumber = 3.1415
+
+    expect(number).to.be.equal(4)
+    expect(number).to.above(3)
+    expect(number).to.below(6)
+    expect(floatNumber).to.be.equal(3.1415)
+    expect(floatNumber).to.be.closeTo(3.2, 0.1)
 })
