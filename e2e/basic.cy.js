@@ -10,8 +10,8 @@ describe('Cypress basic access', () => {
             .should('to.be.equal', 'Campo de Treinamento')
             .and('contains', 'Treinamento')
 
-        // TODO imprimir o log no console
-        // TODO escrever o log em um campo de teste
+        //TODO imprimir o log no console
+        //TODO escrever o log em um campo de teste
     })
 
     it('Should find and interact with element', () => {
