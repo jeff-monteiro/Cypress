@@ -11,13 +11,13 @@ describe('Should visit the page and register a new user',  () => {
         cy.get(userRegister.bankManager).click()
         
         cy.get(userRegister.addCustomer).click()
-        cy.get(userRegister.nameField)
+        cy.get(userRegister.firstName)
             .type('New user')
             .should('have.value', 'New user')
 
-        // cy.get(':nth-child(2) > .form-control')
-        //     .type('Registered')
-        //     .should('have.value', 'Registered')
+        cy.get(userRegister.lastName)
+            .type('Registered')
+            .should('have.value', 'Registered')
 
         // cy.get(':nth-child(3) > .form-control')
         //     .type(60422500)
