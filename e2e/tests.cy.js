@@ -3,7 +3,7 @@ import { userRegister } from './pageobjects/registerUser'
 
 describe('Should visit the page and register a new user',  () => {
     before(() => {
-        cy.visit(' http://www.way2automation.com/angularjs-protractor/banking/#/login')
+        cy.visit('http://www.way2automation.com/angularjs-protractor/banking/#/login')
     })
 
     it('Add a new customer', () => {
@@ -19,11 +19,14 @@ describe('Should visit the page and register a new user',  () => {
             .type('Registered')
             .should('have.value', 'Registered')
 
-        // cy.get(':nth-child(3) > .form-control')
-        //     .type(60422500)
-        //     .should('have.value', '60422500')
+        cy.get(userRegister.cepField)
+            .type(60422500)
+            .should('have.value', '60422500')
 
-        // cy.get('form.ng-dirty > .btn')
-        //     .click()
+        cy.get(userRegister.customerButton).click()
+        cy.on('window:alert', msgCustomerAlert => {
+        expect(msgCustomerAlert).to.be.equal('Customer added successfully with customer id :6')
+        })
+        
     })
 })

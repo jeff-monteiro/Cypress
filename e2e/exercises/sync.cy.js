@@ -16,12 +16,27 @@ describe('Waitings...', () => {
         cy.get('#novoCampo').type('Works')
     })
 
-    it.only('Must do retries', () => {
+    it('Must do retries', () => {
         cy.get('#buttonDelay').click()
         cy.get('#novoCampo')
             //.should('not.exist')
             .should('exist')
             .type('Its working')
+    })
+
+    it('Use of find', () => {
+        cy.get('#buttonList').click()
+        cy.get('#lista li')
+            .find('span')
+            .should('contain', 'Item 1')
+        cy.get('#lista li span')
+            .should('contain', 'Item 2')
+            
+    })
+
+    it.only('Use of timeout', () => {
+        cy.get('#buttonDelay').click()
+        cy.get('#novoCampo').should('exist')
     })
     
 })
