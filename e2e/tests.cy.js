@@ -1,13 +1,10 @@
 import { locators } from './pageobjects/registerUser'
 
-
 describe('Should visit the page and register a new user',  () => {
     before(() => {
         cy.visit('http://www.way2automation.com/angularjs-protractor/banking/#/login')
     })
-    beforeEach(() => {
-        cy.reload()
-    })
+    
     
     it('Add a new customer', () => {
 
@@ -27,16 +24,17 @@ describe('Should visit the page and register a new user',  () => {
             .should('have.value', '60422500')
 
         cy.get(locators.userRegister.customerButton).click()
-        cy.on('window:alert', msgCustomerAlert => {
-        expect(msgCustomerAlert).to.be.equal('Customer added successfully with customer id :6', true)
+        cy.get('.home').click()
+        // cy.on('window:alert', msgCustomerAlert => {
+        // expect(msgCustomerAlert).to.be.equal('Customer added successfully with customer id :6', true)
         
-        })
+       // })
         
     })
 
-    it.only('Login with the new customer', () => {
+    it('Login with the new customer', () => {
         cy.get(locators.loginNewUser.loginNewCustomer).click()
-        cy.get(locators.loginNewUser.boxSelection).select(['Hermoine Granger'])
+        cy.get(locators.loginNewUser.boxSelection).select(['New user Registered'])
         cy.get(locators.loginNewUser.loginButton).click()
     })
 })
