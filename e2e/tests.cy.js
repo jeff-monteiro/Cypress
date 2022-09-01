@@ -36,5 +36,7 @@ describe('Should visit the page and register a new user',  () => {
         cy.get(locators.loginNewUser.loginNewCustomer).click()
         cy.get(locators.loginNewUser.boxSelection).select(['New user Registered'])
         cy.get(locators.loginNewUser.loginButton).click()
+
+        //TODO: Verify if the user has alredy logged in sucessfully.
     })
 })
