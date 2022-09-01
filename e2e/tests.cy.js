@@ -24,7 +24,7 @@ describe('Should visit the page and register a new user',  () => {
             .should('have.value', '60422500')
 
         cy.get(locators.userRegister.customerButton).click()
-        cy.get('.home').click()
+        cy.get(locators.userRegister.homeButton).click()
         // cy.on('window:alert', msgCustomerAlert => {
         // expect(msgCustomerAlert).to.be.equal('Customer added successfully with customer id :6', true)
         

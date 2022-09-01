@@ -7,7 +7,8 @@ export const locators = {
         firstName: ':nth-child(1) > .form-control',
         lastName: ':nth-child(2) > .form-control',
         postField: ':nth-child(3) > .form-control',
-        customerButton: 'form.ng-dirty > .btn'
+        customerButton: 'form.ng-dirty > .btn',
+        homeButton: '.home'
     },
 
     loginNewUser: {
