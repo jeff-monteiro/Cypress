@@ -6,6 +6,6 @@ Here I also could put in practice a sort of knowledge learned during the Automat
 
 Things I used in challenge project
 
-[x] - Page Objects as Project Pattern
-[x] - TDD(Test Driven Development)
-[x] - BDD(Behavior Driven Development)
+- [x] - Page Objects as Project Pattern
+- [x] - TDD(Test Driven Development)
+- [x] - BDD(Behavior Driven Development)
